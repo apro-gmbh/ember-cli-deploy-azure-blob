@@ -137,6 +137,10 @@ module.exports = {
           options["contentEncoding"] = "gzip";
         }
 
+        if (targetFile.endsWith('.mjs')) {
+          options["contentType"] = "application/javascript";
+        }
+
         // Set the cache control policy.
         options['cacheControl'] = this._cacheControlPolicy(fileStat);
 
